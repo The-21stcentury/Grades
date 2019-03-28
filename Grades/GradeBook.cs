@@ -10,7 +10,7 @@ namespace Grades
     {
 
         private string _name;
-        // private List<float> grades;
+        public List<float> grades;
 
         public NameChangedDelegate NameChanged;
 
