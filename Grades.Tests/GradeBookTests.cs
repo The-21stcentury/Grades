@@ -22,7 +22,6 @@ namespace Grades.Tests
             GradeStatistics result = book.ComputeStatistics();
            
             Assert.AreEqual(90,result.HighestGrade);
-
         }
 
         [TestMethod]

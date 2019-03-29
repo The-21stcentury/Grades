@@ -23,27 +23,46 @@ namespace Grades
 
             GradeBook book = new GradeBook();
            
-            book.NameChanged = new NameChangedDelegate(OnNameChanged);
+            book.NameChanged += OnNameChanged;
+            
+           
+
             book.Name = "Scott's Grade Book";
-            //book.AddGrade(91);
-            //book.AddGrade(89.5f);
-            //book.AddGrade(75);
+            book.Name = "Hasan's Grade Book";
+
+            book.AddGrade(91);
+            book.AddGrade(89.5f);
+            book.AddGrade(75);
             //Console.WriteLine(book.Name);
 
-            //GradeStatistics stats = book.ComputeStatistics();
+            GradeStatistics stats = book.ComputeStatistics();
 
 
-            //WriteResult("Average", stats.AverageGrade);
-            //WriteResult("Highest", (int)stats.HighestGrade);
-            //WriteResult("Lowest", stats.LowestGrade);
-
+            WriteResult("Average", stats.AverageGrade);
+            WriteResult("Highest", stats.HighestGrade);
+            WriteResult("Lowest", stats.LowestGrade);
+            WriteResult("Grades", stats.LetterGrade);
 
         }
 
-        static void OnNameChanged(string existingName, string newName)
+        static void WriteResult(string description, string result)
         {
 
-            Console.WriteLine($"Values changed from {existingName}to{newName}");
+            Console.WriteLine("{0}:{1}", description, result);
+
+        }
+        static void OnNameChanged(object sender, NameChangedEventArgs args)
+        {
+
+            Console.WriteLine($"Values changed from {args.ExistingName} to {args.NewName}");
+
+        }
+
+        static void OnNameChanged2(string existingName, string newName)
+        {
+            int count = 0;
+            count++;
+            Console.WriteLine(count);
 
         }
 
@@ -51,7 +70,7 @@ namespace Grades
         static void WriteResult(string description, float result)
         {
 
-            Console.WriteLine("{0}:{1:c}",description,result);
+            Console.WriteLine("{0}:{1}",description,result);
 
         }
 

@@ -11,17 +11,15 @@ namespace Grades
 
         private string _name;
         public List<float> grades;
-
         public NameChangedDelegate NameChanged;
 
 
         public GradeBook()
         {
-            //grades = new List<float>();
+            grades = new List<float>();
             _name = "Empty";
         }
         
-
         public String Name {
             get {
 
@@ -33,7 +31,12 @@ namespace Grades
                 {
                     if (_name!=value)
                     {
-                        NameChanged(_name, value);
+                        NameChangedEventArgs args = new NameChangedEventArgs();
+                        args.ExistingName = _name;
+                        args.NewName = value;
+
+                        NameChanged(this, args);
+                         
                             // delegated
                     }
                     _name = value; 
@@ -42,35 +45,32 @@ namespace Grades
             }
         }
 
-        
-
-    
-     
-        // we make it interal so that will be accessible from class Gradestatiscs 
+        //we make it interal so that will be accessible from class Gradestatiscs
         // internal < default access modiefer !! 
-        // oder public methods when it class modifier also public 
+        // oder public methods when it class modifier also public
 
-        //public GradeStatistics ComputeStatistics()
-        //{
-        //    GradeStatistics stats = new GradeStatistics();
+        public GradeStatistics ComputeStatistics()
+        {
+            GradeStatistics stats = new GradeStatistics();
 
 
-        //    float sum = 0;
-        //    foreach (float grade in grades)
-        //    {
-        //        stats.HighestGrade = Math.Max(grade, stats.HighestGrade);
-        //        stats.LowestGrade = Math.Min(grade, stats.LowestGrade);
-        //        sum += grade;
-        //    }
-        //    stats.AverageGrade = sum / grades.Count;
-        //    return stats;
-        //}
+            float sum = 0;
+            foreach (float grade in grades)
+            {
+                stats.HighestGrade = Math.Max(grade, stats.HighestGrade);
+                stats.LowestGrade = Math.Min(grade, stats.LowestGrade);
+                sum += grade;
+            }
+            stats.AverageGrade = sum / grades.Count;
+            return stats;
+        }
 
-        //public void AddGrade(float grade)
-        //{
-        //    grades.Add(grade);
-        //}
 
-        
+        public void AddGrade(float grade)
+        {
+            grades.Add(grade);
+        }
+
+
     }
 }
