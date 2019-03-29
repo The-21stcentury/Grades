@@ -5,6 +5,7 @@ using System.Speech.Synthesis;
 using System.Speech.Recognition;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Grades
 {
@@ -33,6 +34,7 @@ namespace Grades
 
             //book.Name = "Scott's Grade Book";
             //book.Name = "Hasan's Grade Book";
+            StreamWritterFile.CreateText("grades.txt");
 
             book.AddGrade(91);
             book.AddGrade(89.5f);
