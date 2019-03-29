@@ -13,22 +13,26 @@ namespace Grades
         static void Main(string[] args)
 
         {
-
+            int[] ages = {2,21,40,72,100};
             //GradeBook g1 = new GradeBook();
             //GradeBook g2 = g1;
             //g1 = new GradeBook(); 
             //g1.Name = "scott's grade book ";
             //Console.WriteLine(g2.Name);
             //Console.WriteLine(g1.Name);
+         
+            //foreach (int values in ages) {
 
+            //    Console.WriteLine(values);
+            //}
             GradeBook book = new GradeBook();
-           
-            book.NameChanged += OnNameChanged;
-            
-           
 
-            book.Name = "Scott's Grade Book";
-            book.Name = "Hasan's Grade Book";
+            //book.NameChanged += OnNameChanged;
+
+            book.WriteGrades();
+
+            //book.Name = "Scott's Grade Book";
+            //book.Name = "Hasan's Grade Book";
 
             book.AddGrade(91);
             book.AddGrade(89.5f);
@@ -38,11 +42,11 @@ namespace Grades
             GradeStatistics stats = book.ComputeStatistics();
 
 
-            WriteResult("Average", stats.AverageGrade);
-            WriteResult("Highest", stats.HighestGrade);
-            WriteResult("Lowest", stats.LowestGrade);
-            WriteResult("Grades", stats.LetterGrade);
-
+            //WriteResult("Average", stats.AverageGrade);
+            //WriteResult("Highest", stats.HighestGrade);
+            //WriteResult("Lowest", stats.LowestGrade);
+            //WriteResult("Grades", stats.LetterGrade);
+            //WriteResult("Description", stats.Description);
         }
 
         static void WriteResult(string description, string result)

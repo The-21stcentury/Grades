@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,7 @@ namespace Grades
 
             }
         }
-
+        
         //we make it interal so that will be accessible from class Gradestatiscs
         // internal < default access modiefer !! 
         // oder public methods when it class modifier also public
@@ -66,11 +67,24 @@ namespace Grades
         }
 
 
+
         public void AddGrade(float grade)
         {
             grades.Add(grade);
         }
 
+
+
+        public void WriteGrades()
+        {
+            for (int i = 0; i < grades.Count; i++)
+            {
+                Console.WriteLine(grades[i]);
+                
+            }
+        }
+
+        
 
     }
 }

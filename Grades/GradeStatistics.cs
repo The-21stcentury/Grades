@@ -31,17 +31,39 @@ namespace Grades
                     result = "A";
                 }
 
-                else if (AverageGrade >= 80) {
+                else if (AverageGrade >= 80)
+                {
                     result = "B";
 
                 }
-                else if (AverageGrade >= 70) {
+                else if (AverageGrade >= 70)
+                {
                     result = "C";
                 }
 
-                else {
+                else
+                {
                     return result = "D";
                 }
+                return result;
+            }
+
+        }
+
+        public string Description
+        {
+            get
+            {
+                string result="";
+                switch (LetterGrade) {
+
+                    case "A": result = "Excellent"; break;
+                    case "B": result = "Good"; break;
+                    case "C": result = "Excellent"; break;
+                    default : result="fail";break;
+                    
+               
+            }
                 return result;
             }
 

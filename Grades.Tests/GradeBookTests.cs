@@ -56,5 +56,7 @@ namespace Grades.Tests
             Assert.AreEqual(85.1666666666667f, result.AverageGrade);
 
         }
+
+
     }
 }
