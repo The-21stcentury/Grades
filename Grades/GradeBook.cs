@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    public class GradeBook
+    public class GradeBook:GradesTracker
     {
 
-        private string _name;
-        public List<float> grades;
-        public NameChangedDelegate NameChanged;
+        
+        protected List<float> grades;
 
 
         public GradeBook()
@@ -21,37 +20,16 @@ namespace Grades
             _name = "Empty";
         }
         
-        public String Name {
-            get {
-
-                return _name;
-            }
-            set {
-
-                if (!String.IsNullOrEmpty(value))
-                {
-                    if (_name!=value)
-                    {
-                        NameChangedEventArgs args = new NameChangedEventArgs();
-                        args.ExistingName = _name;
-                        args.NewName = value;
-
-                        NameChanged(this, args);
-                         
-                            // delegated
-                    }
-                    _name = value; 
-                }
-
-            }
-        }
+      
         
         //we make it interal so that will be accessible from class Gradestatiscs
         // internal < default access modiefer !! 
         // oder public methods when it class modifier also public
 
-        public GradeStatistics ComputeStatistics()
+        public override GradeStatistics ComputeStatistics()
         {
+
+            Console.WriteLine("GradeBook::ThrowAwaythelowestgrade");
             GradeStatistics stats = new GradeStatistics();
 
 
@@ -68,20 +46,23 @@ namespace Grades
 
 
 
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
             grades.Add(grade);
         }
 
 
 
-        public void WriteGrades()
+        public override void WriteGrades(TextWriter doc)
         {
+            doc.WriteLine(Name);
             for (int i = 0; i < grades.Count; i++)
             {
-                Console.WriteLine(grades[i]);
+
+                doc.WriteLine(grades[i]);
                 
             }
+            
         }
 
         
