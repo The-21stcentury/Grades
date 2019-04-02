@@ -14,6 +14,8 @@ namespace Grades
         static void Main()
 
         {
+            
+            // i am profi guys 
             //from Visual Studio to Github
             //GradeBook book = CreateGradeBook();
             //  GradesTracker book = CreateGradeBook();
@@ -30,8 +32,7 @@ namespace Grades
             //book.NameChanged += OnNameChanged;
 
             //book.Name = "Scott's Grade Book";
-            //book.Name = "Hasan's Grade Book";
-
+          
             //Console.WriteLine(book.Name);
 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    public class GradeBook:GradesTracker
+    public class GradeBook
     {
 
         

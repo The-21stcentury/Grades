@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    public abstract class  GradesTracker : IGradeTracker , IDisposable ,ICloneable
+    public abstract class  GradesTracker 
     {
         public abstract void AddGrade(float grade);
         public abstract GradeStatistics ComputeStatistics();
