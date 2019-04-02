@@ -10,15 +10,15 @@ namespace Grades
     {
       
 
-        public GradeStatistics ComputeStatistics() {
+        /*public GradeStatistics ComputeStatistics() {
             Console.WriteLine("ThrowAwaythelowestgrade");
             float lowest = float.MaxValue;
             foreach (float grade in grades) {
                 lowest = Math.Min(grade, lowest);
             }
             grades.Remove(lowest);
-           return base.ComputeStatistics();
+           return ComputeStatistics();
 
-        }
+        }*/
     }
 }
