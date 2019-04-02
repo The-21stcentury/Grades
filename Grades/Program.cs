@@ -30,8 +30,7 @@ namespace Grades
             //book.NameChanged += OnNameChanged;
 
             //book.Name = "Scott's Grade Book";
-            //book.Name = "Hasan's Grade Book";
-
+          
             //Console.WriteLine(book.Name);
 
 
