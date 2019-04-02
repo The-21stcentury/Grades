@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    class ThrowAwayGradeBook : GradeBook
+    class ThrowAwayGradeBook
     {
       
 
-        public override GradeStatistics ComputeStatistics() {
+        public GradeStatistics ComputeStatistics() {
             Console.WriteLine("ThrowAwaythelowestgrade");
             float lowest = float.MaxValue;
             foreach (float grade in grades) {
