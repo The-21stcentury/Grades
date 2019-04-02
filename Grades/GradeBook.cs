@@ -26,7 +26,7 @@ namespace Grades
         // internal < default access modiefer !! 
         // oder public methods when it class modifier also public
 
-        public override GradeStatistics ComputeStatistics()
+        public  GradeStatistics ComputeStatistics()
         {
 
             Console.WriteLine("GradeBook::ThrowAwaythelowestgrade");
@@ -46,14 +46,14 @@ namespace Grades
 
 
 
-        public override void AddGrade(float grade)
+        public  void AddGrade(float grade)
         {
             grades.Add(grade);
         }
 
 
 
-        public override void WriteGrades(TextWriter doc)
+        public  void WriteGrades(TextWriter doc)
         {
             doc.WriteLine(Name);
             for (int i = 0; i < grades.Count; i++)
